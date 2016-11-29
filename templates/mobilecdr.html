@@ -1,0 +1,29 @@
+    <ion-view view-title="Current Usage">     
+    <ion-content>
+    <div class="bootstrap-iso">
+  <table class="table table-bordered table-striped">
+        <tbody>
+
+            <tr>
+                <th><strong>#<strong></th>
+                <th><strong>Date</strong></th>
+                <th><strong>Number</strong></th>
+                <th><strong>Duration</strong></th>
+                <th><strong>Country</strong></th>
+            </tr>
+            <tr ng-repeat="person in cdrs">
+                <td ng-bind="$index + 1"></td>
+                <td ng-bind="person.Begintime.replace('T', ' ')"></td>
+                <td ng-bind="person.MaskDestination"></td>
+                <td ng-bind="person.DurationConnection.replace('<br>', ' ')"></td>
+                <!-- BAD PRACTICE FOR STYLE ON PURPOSE: Using a function as binder is not good -->
+
+                <td ng-bind="person.DestinationCountry"></td>
+               
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+    </ion-content>
+    </ion-view>
